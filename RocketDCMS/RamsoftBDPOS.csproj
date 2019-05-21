@@ -383,6 +383,10 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\PaymentTransaction.cs" />
+    <Compile Include="Models\POS\ItemCatagory.cs" />
+    <Compile Include="Models\POS\ItemSubCatagory.cs" />
+    <Compile Include="Models\POS\ItemUnit.cs" />
+    <Compile Include="Models\POS\Supplier.cs" />
     <Compile Include="Models\ReferelLab.cs" />
     <Compile Include="Models\CustomRole.cs" />
     <Compile Include="Models\Specimen.cs" />

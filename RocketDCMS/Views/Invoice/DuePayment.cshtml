@@ -1,0 +1,29 @@
+﻿@model RamsoftBD.ModelView.InvoiceUpdateViewModel
+@{
+    ViewBag.Title = "Due Payment";
+}
+
+<h2 class="bg" style="background-color:#293955;color:white;text-align:center">Search Invoice by Invoice Number</h2>
+<br />
+@using (Html.BeginForm("DuePayment", "Invoice"))
+{
+    @Html.AntiForgeryToken()
+    <div class="row" style="margin-left:500px">
+        <div class="col-xs-6 col-md-5">
+            <div class="input-group">
+                @Html.EditorFor(model => model.OrderNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Search" } })
+
+                <div class="input-group-btn">
+                    <button class="btn btn-warning" type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <br />
+
+    </div>
+    <h5 style="color:red;text-align:center">@ViewBag.Message</h5>
+}
+

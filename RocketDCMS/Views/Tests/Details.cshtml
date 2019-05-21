@@ -1,0 +1,106 @@
+﻿@model RamsoftBD.Models.Test
+
+@{
+   ViewBag.Title = "Details"; 
+}
+
+<h2 class="bg" style="background-color:#293955;color:white;text-align:center">Test Details</h2>
+
+<div>
+    <h4>Test</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.DepartmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.DepartmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Specimen.SpecimenName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specimen.SpecimenName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit.UnitName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unit.UnitName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReferenceValueMale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReferenceValueMale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReferenceValueFeMale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReferenceValueFeMale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReferenceValueChildren)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReferenceValueChildren)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

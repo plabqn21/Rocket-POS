@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2467DD87-5122-4B3B-A11E-61EDBF66F05E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RocketDCMS</RootNamespace>
+    <AssemblyName>RocketDCMS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.2.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BranchesController.cs" />
+    <Compile Include="Controllers\CustomRolesController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\DoctorsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
+    <Compile Include="Controllers\PatientsController.cs" />
+    <Compile Include="Controllers\PermissionsController.cs" />
+    <Compile Include="Controllers\ReferelLabsController.cs" />
+    <Compile Include="Controllers\ReportControllerDC.cs" />
+    <Compile Include="Controllers\SpecimensController.cs" />
+    <Compile Include="Controllers\TestsController.cs" />
+    <Compile Include="Controllers\UnitsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904190641451_InitialMigration.cs" />
+    <Compile Include="Migrations\201904190641451_InitialMigration.Designer.cs">
+      <DependentUpon>201904190641451_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904190700529_BranchTable.cs" />
+    <Compile Include="Migrations\201904190700529_BranchTable.Designer.cs">
+      <DependentUpon>201904190700529_BranchTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904190716003_a.cs" />
+    <Compile Include="Migrations\201904190716003_a.Designer.cs">
+      <DependentUpon>201904190716003_a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904190741118_ab.cs" />
+    <Compile Include="Migrations\201904190741118_ab.Designer.cs">
+      <DependentUpon>201904190741118_ab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904210516563_AddDoctorTable.cs" />
+    <Compile Include="Migrations\201904210516563_AddDoctorTable.Designer.cs">
+      <DependentUpon>201904210516563_AddDoctorTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904210622472_alterDoctorTable.cs" />
+    <Compile Include="Migrations\201904210622472_alterDoctorTable.Designer.cs">
+      <DependentUpon>201904210622472_alterDoctorTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904210631081_alterDoctorTable2.cs" />
+    <Compile Include="Migrations\201904210631081_alterDoctorTable2.Designer.cs">
+      <DependentUpon>201904210631081_alterDoctorTable2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904210839159_addPatientTable.cs" />
+    <Compile Include="Migrations\201904210839159_addPatientTable.Designer.cs">
+      <DependentUpon>201904210839159_addPatientTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904230358394_temp.cs" />
+    <Compile Include="Migrations\201904230358394_temp.Designer.cs">
+      <DependentUpon>201904230358394_temp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904230539498_ModifyPatientTable.cs" />
+    <Compile Include="Migrations\201904230539498_ModifyPatientTable.Designer.cs">
+      <DependentUpon>201904230539498_ModifyPatientTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904230817291_ModifyBranchTable.cs" />
+    <Compile Include="Migrations\201904230817291_ModifyBranchTable.Designer.cs">
+      <DependentUpon>201904230817291_ModifyBranchTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904240328214_ModifyPatientAndDoctorTable.cs" />
+    <Compile Include="Migrations\201904240328214_ModifyPatientAndDoctorTable.Designer.cs">
+      <DependentUpon>201904240328214_ModifyPatientAndDoctorTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904240409496_UpdateBranchTable.cs" />
+    <Compile Include="Migrations\201904240409496_UpdateBranchTable.Designer.cs">
+      <DependentUpon>201904240409496_UpdateBranchTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904241043348_ModifyReferalLabTable.cs" />
+    <Compile Include="Migrations\201904241043348_ModifyReferalLabTable.Designer.cs">
+      <DependentUpon>201904241043348_ModifyReferalLabTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904241539085_addDepartmenttable.cs" />
+    <Compile Include="Migrations\201904241539085_addDepartmenttable.Designer.cs">
+      <DependentUpon>201904241539085_addDepartmenttable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904241550553_addSpecimenTable.cs" />
+    <Compile Include="Migrations\201904241550553_addSpecimenTable.Designer.cs">
+      <DependentUpon>201904241550553_addSpecimenTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904250328038_AddUnitTable.cs" />
+    <Compile Include="Migrations\201904250328038_AddUnitTable.Designer.cs">
+      <DependentUpon>201904250328038_AddUnitTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904250335459_AddTestTable.cs" />
+    <Compile Include="Migrations\201904250335459_AddTestTable.Designer.cs">
+      <DependentUpon>201904250335459_AddTestTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904290635063_addOrderTable.cs" />
+    <Compile Include="Migrations\201904290635063_addOrderTable.Designer.cs">
+      <DependentUpon>201904290635063_addOrderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905020343073_modifyOrderTable.cs" />
+    <Compile Include="Migrations\201905020343073_modifyOrderTable.Designer.cs">
+      <DependentUpon>201905020343073_modifyOrderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905020504189_AddInvoiceCheckOutTable.cs" />
+    <Compile Include="Migrations\201905020504189_AddInvoiceCheckOutTable.Designer.cs">
+      <DependentUpon>201905020504189_AddInvoiceCheckOutTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905020711305_AddBillTransactionsTable.cs" />
+    <Compile Include="Migrations\201905020711305_AddBillTransactionsTable.Designer.cs">
+      <DependentUpon>201905020711305_AddBillTransactionsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905020724035_modifyTable.cs" />
+    <Compile Include="Migrations\201905020724035_modifyTable.Designer.cs">
+      <DependentUpon>201905020724035_modifyTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905020814578_modifyTable1.cs" />
+    <Compile Include="Migrations\201905020814578_modifyTable1.Designer.cs">
+      <DependentUpon>201905020814578_modifyTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905020946417_modify.cs" />
+    <Compile Include="Migrations\201905020946417_modify.Designer.cs">
+      <DependentUpon>201905020946417_modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030522201_modifyBranchTabe.cs" />
+    <Compile Include="Migrations\201905030522201_modifyBranchTabe.Designer.cs">
+      <DependentUpon>201905030522201_modifyBranchTabe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030641310_modifyBranchTable2.cs" />
+    <Compile Include="Migrations\201905030641310_modifyBranchTable2.Designer.cs">
+      <DependentUpon>201905030641310_modifyBranchTable2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030653004_modifyDoctorT.cs" />
+    <Compile Include="Migrations\201905030653004_modifyDoctorT.Designer.cs">
+      <DependentUpon>201905030653004_modifyDoctorT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905030701492_modifyDoctorT2.cs" />
+    <Compile Include="Migrations\201905030701492_modifyDoctorT2.Designer.cs">
+      <DependentUpon>201905030701492_modifyDoctorT2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905031217469_modifyDepartmentTable.cs" />
+    <Compile Include="Migrations\201905031217469_modifyDepartmentTable.Designer.cs">
+      <DependentUpon>201905031217469_modifyDepartmentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905031503301_modifyTables.cs" />
+    <Compile Include="Migrations\201905031503301_modifyTables.Designer.cs">
+      <DependentUpon>201905031503301_modifyTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905031531122_modifyTables2.cs" />
+    <Compile Include="Migrations\201905031531122_modifyTables2.Designer.cs">
+      <DependentUpon>201905031531122_modifyTables2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905031644284_modifyTables44.cs" />
+    <Compile Include="Migrations\201905031644284_modifyTables44.Designer.cs">
+      <DependentUpon>201905031644284_modifyTables44.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905040429348_ModifyTestTable.cs" />
+    <Compile Include="Migrations\201905040429348_ModifyTestTable.Designer.cs">
+      <DependentUpon>201905040429348_ModifyTestTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905080405415_AddTableSubMenuandMainMenu.cs" />
+    <Compile Include="Migrations\201905080405415_AddTableSubMenuandMainMenu.Designer.cs">
+      <DependentUpon>201905080405415_AddTableSubMenuandMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905080408469_RenameRoleTable.cs" />
+    <Compile Include="Migrations\201905080408469_RenameRoleTable.Designer.cs">
+      <DependentUpon>201905080408469_RenameRoleTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905080451360_AddPermissionTable.cs" />
+    <Compile Include="Migrations\201905080451360_AddPermissionTable.Designer.cs">
+      <DependentUpon>201905080451360_AddPermissionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905080958079_ModifyPermissionTableaddMainMenuId.cs" />
+    <Compile Include="Migrations\201905080958079_ModifyPermissionTableaddMainMenuId.Designer.cs">
+      <DependentUpon>201905080958079_ModifyPermissionTableaddMainMenuId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905090353591_MoifyPermissionTableInharitence.cs" />
+    <Compile Include="Migrations\201905090353591_MoifyPermissionTableInharitence.Designer.cs">
+      <DependentUpon>201905090353591_MoifyPermissionTableInharitence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905090448456_MoifyCustomRoleTInheritance.cs" />
+    <Compile Include="Migrations\201905090448456_MoifyCustomRoleTInheritance.Designer.cs">
+      <DependentUpon>201905090448456_MoifyCustomRoleTInheritance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905090458455_MoifyUnknown.cs" />
+    <Compile Include="Migrations\201905090458455_MoifyUnknown.Designer.cs">
+      <DependentUpon>201905090458455_MoifyUnknown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905120453116_AddPaymentTransactionTable.cs" />
+    <Compile Include="Migrations\201905120453116_AddPaymentTransactionTable.Designer.cs">
+      <DependentUpon>201905120453116_AddPaymentTransactionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905120606270_RenamePropertyfromBillTransaction.cs" />
+    <Compile Include="Migrations\201905120606270_RenamePropertyfromBillTransaction.Designer.cs">
+      <DependentUpon>201905120606270_RenamePropertyfromBillTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905160501415_AddTestCodeToOrderTable.cs" />
+    <Compile Include="Migrations\201905160501415_AddTestCodeToOrderTable.Designer.cs">
+      <DependentUpon>201905160501415_AddTestCodeToOrderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BillTransaction.cs" />
+    <Compile Include="Models\Common\MainMenu.cs" />
+    <Compile Include="Models\Common\MenuViewModel.cs" />
+    <Compile Include="Models\Common\Permission.cs" />
+    <Compile Include="Models\Common\SubMenu.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\IdentityHelper.cs" />
+    <Compile Include="Models\InvoiceCheckout.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\PaymentTransaction.cs" />
+    <Compile Include="Models\ReferelLab.cs" />
+    <Compile Include="Models\CustomRole.cs" />
+    <Compile Include="Models\Specimen.cs" />
+    <Compile Include="Models\Test.cs" />
+    <Compile Include="Models\Unit.cs" />
+    <Compile Include="ModelView\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Branch.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="ModelView\BranchViewModel.cs" />
+    <Compile Include="ModelView\CustomRoleViewModel.cs" />
+    <Compile Include="ModelView\DepartmentViewModel.cs" />
+    <Compile Include="ModelView\DoctorViewModel.cs" />
+    <Compile Include="ModelView\DoctorViewModelForInvoice.cs" />
+    <Compile Include="ModelView\DuePaymentViewModel.cs" />
+    <Compile Include="ModelView\InvoiceCheckoutViewModel.cs" />
+    <Compile Include="ModelView\InvoiceUpdateViewModel.cs" />
+    <Compile Include="ModelView\InvoiceViewModel.cs" />
+    <Compile Include="ModelView\LoginViewModel.cs" />
+    <Compile Include="ModelView\ManageViewModels.cs" />
+    <Compile Include="ModelView\PatientViewModel.cs" />
+    <Compile Include="ModelView\PermissionViewModel.cs" />
+    <Compile Include="ModelView\ReferelLabViewModel.cs" />
+    <Compile Include="ModelView\RegisterViewModel.cs" />
+    <Compile Include="ModelView\ReportViewModelDC.cs" />
+    <Compile Include="ModelView\SpecimenViewModel.cs" />
+    <Compile Include="ModelView\SubMenuViewModel.cs" />
+    <Compile Include="ModelView\TestViewModel.cs" />
+    <Compile Include="ModelView\TestViewModelForInvoice.cs" />
+    <Compile Include="ModelView\UnitViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDataHelper\Invoice\InvoiceReportDataHelper.cs" />
+    <Compile Include="ReportDataSet\DC\InvoiceDatasetDC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceDatasetDC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewer.aspx.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewer.aspx.designer.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="ControllerHelperScript\Branches\Create.js" />
+    <Content Include="ControllerHelperScript\Common\NavDropdownOnHover.js" />
+    <Content Include="ControllerHelperScript\Invoice\InvoiceCheckOut.js" />
+    <Content Include="ControllerHelperScript\Permission\Create.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="LoginUI\LogInUI.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="ReportDataSet\DC\InvoiceDatasetDC.xsc">
+      <DependentUpon>InvoiceDatasetDC.xsd</DependentUpon>
+    </Content>
+    <None Include="ReportDataSet\DC\InvoiceDatasetDC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvoiceDatasetDC.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ReportDataSet\DC\InvoiceDatasetDC.xss">
+      <DependentUpon>InvoiceDatasetDC.xsd</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="ReportViewer.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.min.css" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.timepicker.min.css" />
+    <Content Include="Scripts\jquery.timepicker.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Branches\Create.cshtml" />
+    <Content Include="Views\Branches\Delete.cshtml" />
+    <Content Include="Views\Branches\Details.cshtml" />
+    <Content Include="Views\Branches\Edit.cshtml" />
+    <Content Include="Views\Doctors\Create.cshtml" />
+    <Content Include="Views\Doctors\Delete.cshtml" />
+    <Content Include="Views\Doctors\Edit.cshtml" />
+    <Content Include="Views\ReferelLabs\Create.cshtml" />
+    <Content Include="Views\ReferelLabs\Delete.cshtml" />
+    <Content Include="Views\ReferelLabs\Details.cshtml" />
+    <Content Include="Views\ReferelLabs\Edit.cshtml" />
+    <Content Include="Views\ReferelLabs\Index.cshtml" />
+    <Content Include="Views\Patients\Create.cshtml" />
+    <Content Include="Views\Patients\Delete.cshtml" />
+    <Content Include="Views\Patients\Details.cshtml" />
+    <Content Include="Views\Patients\Edit.cshtml" />
+    <Content Include="Views\Invoice\Create.cshtml" />
+    <Content Include="Views\Invoice\Delete.cshtml" />
+    <Content Include="Views\Invoice\Details.cshtml" />
+    <Content Include="Views\Invoice\Edit.cshtml" />
+    <Content Include="Views\Invoice\DoctorCreation.cshtml" />
+    <Content Include="Views\Invoice\DoctorEdit.cshtml" />
+    <Content Include="Views\Invoice\InvoiceCreate.cshtml" />
+    <Content Include="Views\Departments\Create.cshtml" />
+    <Content Include="Views\Departments\Delete.cshtml" />
+    <Content Include="Views\Departments\Details.cshtml" />
+    <Content Include="Views\Departments\Edit.cshtml" />
+    <Content Include="Views\Specimens\Create.cshtml" />
+    <Content Include="Views\Specimens\Delete.cshtml" />
+    <Content Include="Views\Specimens\Details.cshtml" />
+    <Content Include="Views\Specimens\Edit.cshtml" />
+    <Content Include="Views\Specimens\Index.cshtml" />
+    <Content Include="Views\Units\Create.cshtml" />
+    <Content Include="Views\Units\Delete.cshtml" />
+    <Content Include="Views\Units\Details.cshtml" />
+    <Content Include="Views\Units\Edit.cshtml" />
+    <Content Include="Views\Tests\Create.cshtml" />
+    <Content Include="Views\Tests\Delete.cshtml" />
+    <Content Include="Views\Tests\Edit.cshtml" />
+    <Content Include="Views\Tests\Index.cshtml" />
+    <Content Include="Views\Invoice\InvoiceCheckOut.cshtml" />
+    <Content Include="Views\Doctors\Details.cshtml" />
+    <Content Include="Views\Tests\Details.cshtml" />
+    <Content Include="Views\Invoice\InvoiceSearchResult.cshtml" />
+    <Content Include="Views\Invoice\InvoiceSearch.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Diagonostic_Home.cshtml" />
+    <Content Include="Views\Shared\MenuPartialView.cshtml" />
+    <Content Include="Views\CustomRoles\Create.cshtml" />
+    <Content Include="Views\CustomRoles\Delete.cshtml" />
+    <Content Include="Views\CustomRoles\Details.cshtml" />
+    <Content Include="Views\CustomRoles\Edit.cshtml" />
+    <Content Include="Views\CustomRoles\Index.cshtml" />
+    <Content Include="Views\Permissions\Create.cshtml" />
+    <Content Include="Views\Permissions\Delete.cshtml" />
+    <Content Include="Views\Permissions\Edit.cshtml" />
+    <Content Include="Views\Invoice\DuePayment.cshtml" />
+    <Content Include="Views\Invoice\DuePaymentSearchResult.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\ReportControllerDS\ParameterEntryDC.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904190641451_InitialMigration.resx">
+      <DependentUpon>201904190641451_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904190700529_BranchTable.resx">
+      <DependentUpon>201904190700529_BranchTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904190716003_a.resx">
+      <DependentUpon>201904190716003_a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904190741118_ab.resx">
+      <DependentUpon>201904190741118_ab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904210516563_AddDoctorTable.resx">
+      <DependentUpon>201904210516563_AddDoctorTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904210622472_alterDoctorTable.resx">
+      <DependentUpon>201904210622472_alterDoctorTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904210631081_alterDoctorTable2.resx">
+      <DependentUpon>201904210631081_alterDoctorTable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904210839159_addPatientTable.resx">
+      <DependentUpon>201904210839159_addPatientTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904230358394_temp.resx">
+      <DependentUpon>201904230358394_temp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904230539498_ModifyPatientTable.resx">
+      <DependentUpon>201904230539498_ModifyPatientTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904230817291_ModifyBranchTable.resx">
+      <DependentUpon>201904230817291_ModifyBranchTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904240328214_ModifyPatientAndDoctorTable.resx">
+      <DependentUpon>201904240328214_ModifyPatientAndDoctorTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904240409496_UpdateBranchTable.resx">
+      <DependentUpon>201904240409496_UpdateBranchTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904241043348_ModifyReferalLabTable.resx">
+      <DependentUpon>201904241043348_ModifyReferalLabTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904241539085_addDepartmenttable.resx">
+      <DependentUpon>201904241539085_addDepartmenttable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904241550553_addSpecimenTable.resx">
+      <DependentUpon>201904241550553_addSpecimenTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904250328038_AddUnitTable.resx">
+      <DependentUpon>201904250328038_AddUnitTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904250335459_AddTestTable.resx">
+      <DependentUpon>201904250335459_AddTestTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904290635063_addOrderTable.resx">
+      <DependentUpon>201904290635063_addOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905020343073_modifyOrderTable.resx">
+      <DependentUpon>201905020343073_modifyOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905020504189_AddInvoiceCheckOutTable.resx">
+      <DependentUpon>201905020504189_AddInvoiceCheckOutTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905020711305_AddBillTransactionsTable.resx">
+      <DependentUpon>201905020711305_AddBillTransactionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905020724035_modifyTable.resx">
+      <DependentUpon>201905020724035_modifyTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905020814578_modifyTable1.resx">
+      <DependentUpon>201905020814578_modifyTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905020946417_modify.resx">
+      <DependentUpon>201905020946417_modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030522201_modifyBranchTabe.resx">
+      <DependentUpon>201905030522201_modifyBranchTabe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030641310_modifyBranchTable2.resx">
+      <DependentUpon>201905030641310_modifyBranchTable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030653004_modifyDoctorT.resx">
+      <DependentUpon>201905030653004_modifyDoctorT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905030701492_modifyDoctorT2.resx">
+      <DependentUpon>201905030701492_modifyDoctorT2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905031217469_modifyDepartmentTable.resx">
+      <DependentUpon>201905031217469_modifyDepartmentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905031503301_modifyTables.resx">
+      <DependentUpon>201905031503301_modifyTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905031531122_modifyTables2.resx">
+      <DependentUpon>201905031531122_modifyTables2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905031644284_modifyTables44.resx">
+      <DependentUpon>201905031644284_modifyTables44.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905040429348_ModifyTestTable.resx">
+      <DependentUpon>201905040429348_ModifyTestTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905080405415_AddTableSubMenuandMainMenu.resx">
+      <DependentUpon>201905080405415_AddTableSubMenuandMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905080408469_RenameRoleTable.resx">
+      <DependentUpon>201905080408469_RenameRoleTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905080451360_AddPermissionTable.resx">
+      <DependentUpon>201905080451360_AddPermissionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905080958079_ModifyPermissionTableaddMainMenuId.resx">
+      <DependentUpon>201905080958079_ModifyPermissionTableaddMainMenuId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905090353591_MoifyPermissionTableInharitence.resx">
+      <DependentUpon>201905090353591_MoifyPermissionTableInharitence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905090448456_MoifyCustomRoleTInheritance.resx">
+      <DependentUpon>201905090448456_MoifyCustomRoleTInheritance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905090458455_MoifyUnknown.resx">
+      <DependentUpon>201905090458455_MoifyUnknown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905120453116_AddPaymentTransactionTable.resx">
+      <DependentUpon>201905120453116_AddPaymentTransactionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905120606270_RenamePropertyfromBillTransaction.resx">
+      <DependentUpon>201905120606270_RenamePropertyfromBillTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905160501415_AddTestCodeToOrderTable.resx">
+      <DependentUpon>201905160501415_AddTestCodeToOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Invoice\Invoice.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58292</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58292/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

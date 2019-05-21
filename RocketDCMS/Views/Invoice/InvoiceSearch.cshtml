@@ -1,0 +1,255 @@
+﻿@model RamsoftBD.ModelView.InvoiceUpdateViewModel
+@{
+    ViewBag.Title = "Invoice Create";
+}
+
+<h2 class="bg" style="background-color:#293955;color:white;text-align:center">Search Invoice by Invoice Number</h2>
+<br />
+@using (Html.BeginForm("InvoiceSearchResult", "Invoice"))
+{
+    @Html.AntiForgeryToken()
+<div class="row" style="margin-left:500px">
+    <div class="col-xs-6 col-md-5">
+        <div class="input-group">
+            @Html.EditorFor(model => model.OrderNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Search" } })
+
+            <div class="input-group-btn">
+                <button class="btn btn-warning" type="submit">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </div>
+        </div>
+        <h5 style="color:red;text-align:center">@ViewBag.Message</h5>
+    </div>
+    
+</div>
+}
+<br />
+<br />
+<div>
+    <div id="orderItems">
+        <table class="table table-bordered" id="orderdetailsItems">
+            <thead>
+                <tr>
+                   
+                    <th>Test Name</th>
+                    <th>Test Code</th>
+                    <th>Specimen</th>
+                    <th>Department</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+
+                    <th>  R V(M)</th>
+                    <th>  R V(F)</th>
+                    <th>  R V(C)</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+        <span id="orderItemError" style="color:red"></span>
+    </div>
+    <div style="padding:10px 0; text-align:right">
+        <input id="InvoiceSaveBtn" type="button" value="Save & Checkout >>" class="btn btn-warning" style="padding:10px 20px" disabled />
+    </div>
+</div>
+
+
+<div>
+
+
+
+    <table id="myTable">
+        <thead>
+            <tr>
+               
+
+                <th>
+                    @Html.DisplayName("Test Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Test Code")
+                </th>
+                <th>
+                    @Html.DisplayName("Specimen")
+                </th>
+                <th>
+                    @Html.DisplayName("Department")
+                </th>
+
+                <th>
+                    @Html.DisplayName("Price")
+                </th>
+
+                <th>
+                    @Html.DisplayName("Discount")
+                </th>
+
+                <th>
+                    @Html.DisplayName("R V(M)")
+                </th>
+                <th>
+                    @Html.DisplayName("R V(F)")
+                </th>
+                <th>
+                    @Html.DisplayName("R V(C)")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.InvoiceViewModel.Tests)
+            {
+                <tr id="mainrow">
+                 
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TestName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TestCode)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Specimen.SpecimenName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Discount)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReferenceValueFeMale)
+                        @Html.DisplayFor(modelItem => item.Unit.UnitName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReferenceValueFeMale)
+                        @Html.DisplayFor(modelItem => item.Unit.UnitName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReferenceValueChildren)
+                        @Html.DisplayFor(modelItem => item.Unit.UnitName)
+                    </td>
+                    <td>
+                        <input type="button" class="add btn-success" value="add" style="width:80px" disabled />
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+
+
+            //remove button click event
+            $('#orderdetailsItems').on('click', '.remove', function () {
+                $(this).parents('tr').remove();
+            });
+
+
+            $('#myTable').on('click', '.add', function () {
+                var $newRow = $(this).parents('tr').clone();
+                //Replace add button with remove button
+                $('.add', $newRow).addClass('remove').val('Remove').removeClass('btn-success').addClass('btn-danger');
+                //append clone row
+                $('#orderdetailsItems').append($newRow);
+            });
+
+            @if (Model.Orders != null)
+            {
+
+                foreach (var item in Model.Orders)
+                {
+                        <text>
+            var $newRow = "<tr><td>@item.Test.TestName</td><td>@item.Test.TestCode</td><td>@item.Test.Specimen.SpecimenName</td><td>@item.Test.Department.DepartmentName</td><td>@item.Test.Price</td><td>@item.Test.Discount</td><td>@item.Test.ReferenceValueFeMale@item.Test.Unit.UnitName</td><td>@item.Test.ReferenceValueFeMale@item.Test.Unit.UnitName</td><td>@item.Test.ReferenceValueChildren@item.Test.Unit.UnitName</td><td><button  class='remove btn-danger' value='Remove' style='width: 80px'>Remove</button></td></tr>";
+
+            $('#orderdetailsItems').append($newRow);
+
+                        </text>
+                }
+
+            }
+
+
+            $("#InvoiceSaveBtn").click(function InvoiceSaveBtnOnClick() {
+    var list = [];
+    var table = document.getElementById("orderdetailsItems");
+   
+    for (var i = 1; i < table.rows.length; i++) {
+
+        var orderItem = {};
+
+        for (var j = 0; j < table.rows[i].cells.length-2; j++) {
+
+         
+            orderItem[table.rows[0].cells[j].innerHTML.replace(/\s/g, '')] = table.rows[i].cells[j].innerHTML.trim();
+          
+
+        }
+
+        orderItem["Patient_Id"]="@Model.InvoiceViewModel.Patient.Id";
+        orderItem["Doctor_Id"]="@Model.InvoiceViewModel.Doctor.Id";
+
+        list.push(orderItem);
+    }
+
+                $(this).val('Please wait...');
+
+                $.ajax({
+    method: 'POST',
+                    url: '/Invoice/InvoiceCreate',
+                    data: JSON.stringify(list),
+                    contentType: 'application/json',
+                    success: function (data) {
+
+            //////////////////////////////////////////////////////////////////////////
+            if (data == "Fail") {
+
+                            $.getJSON('/Invoice/Create',function (data) {
+
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                            alert('Error!');
+                        });
+
+                    }
+
+                        else {
+                            data = JSON.parse(data);
+
+                            var URL = "/Invoice/InvoiceCheckOut?Doctor_Id=" + data.Doctor_Id + "&Patient_Id=" + data.Patient_Id + "&OrderNumber=" + data.OrderNumber;
+                    window.open(URL, "_self");
+
+                        }
+
+                ////////////////////////////////////////////////////////////////////
+            },
+                    error: function (error) {
+                alert('Error!');
+            }
+                });
+
+            });
+
+
+
+
+
+
+        });
+
+    </script>
+
+}

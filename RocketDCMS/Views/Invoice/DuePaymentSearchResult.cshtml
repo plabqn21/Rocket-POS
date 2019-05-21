@@ -1,0 +1,151 @@
+﻿@model RamsoftBD.ModelView.DuePaymentViewModel
+@{
+    ViewBag.Title = "Due Payment";
+}
+
+<h2 class="bg" style="background-color:#293955;color:white;text-align:center">Due Payment</h2>
+<br />
+<div style="text-align:center">
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div class="list-group">
+                <a href="#" class="list-group-item active">
+                    <h2 class="list-group-item-heading" style="text-align:center">Patient Details</h2>
+
+                </a>
+                <a href="#" class="list-group-item">
+
+                    <h4 class="list-group-item-text" style="text-align:center">
+                        Name: @Model.Patient.PatientName  ;
+                        Gender: @Model.Patient.Gender  ;
+                        Age: @Model.Patient.Age @Model.Patient.AgeType  ;
+                        Blood Group: @Model.Patient.BloodGroup;
+                        Mobile : @Model.Patient.MobileNumber
+
+                    </h4>
+
+
+                </a>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-lg-4">
+
+        <div class="list-group">
+
+
+
+
+            <div class="row">
+                <a href="#" class="list-group-item">
+
+                    <h4 class="list-group-item-text">
+                        Bill No:  @Model.BillTransaction.OrderNumber
+                        <br />
+                        Bill Date:  @Model.BillTransaction.BillDate
+                        <br />
+                        <br />
+                        Total Bill:  @Model.InvoiceCheckout.TotalBill
+                        <br />
+                        <p style="color:blue">  Discount:  @Model.InvoiceCheckout.Discount%</p>
+
+                        Total Payable:  @Model.BillTransaction.BillAmount
+                        <br />
+
+                        <p style="color:green">
+                            Total Paid:  @Model.PaymentTransactionSum
+                        </p>
+
+                        <p style="color:red">  Due:  @Model.TotalDue</p>
+
+                    </h4>
+
+
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="col-lg-4">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(x => x.Doctor.Id)
+            @Html.HiddenFor(x => x.Patient.Id)
+            @Html.HiddenFor(x => x.BillTransaction.OrderNumber)
+            @Html.HiddenFor(x => x.Patient.Id)
+            @Html.HiddenFor(x => x.BillTransaction.Branch_Id)
+
+            <div class="form-group">
+                @Html.Label("Amount", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.TransAmount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TransAmount, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-7" style="margin-left:372px;margin-top:70px">
+                    <input type="submit" value="Save" class="btn btn-info" />
+                    <input type="button" id="PrintButton" value="Print" class="btn btn-info" />
+                </div>
+            </div>
+        }
+
+
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    
+    
+<script>
+
+
+
+
+    $('#PrintButton').click(function () {
+
+        var Parameter = {
+            OrderNumber:@Model.InvoiceCheckout.OrderNumber,
+            ReportName:"Invoice",
+            
+
+        }
+        var pathArray = window.location.href.split('/');
+        var protocol = pathArray[0];
+        var host = pathArray[2];
+
+        //if (domain == "#") domain = "";
+        this.baseURL = protocol + '//' + host;
+        Finalurl = this.baseURL + "/ReportViewer.aspx";
+        var url = Finalurl + "?parameters=" + JSON.stringify(Parameter);
+        window.open(url, '_blank');
+
+    })
+
+
+
+
+
+</script>
+    
+    
+    
+    
+    
+    
+    
+    }

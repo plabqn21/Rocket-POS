@@ -1,0 +1,123 @@
+﻿@model RamsoftBD.ModelView.PermissionViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="bg" style="background-color:#293955;color:white">Permissions</h2>
+
+<div class="row">
+    <div class="col-lg-8">
+
+        <table class="display" id="myTable">
+
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CustomRole.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayName("Main Menu")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Sub Menu")
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model.Permissions)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomRole.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MainMenu.MainMenuName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubMenu.SubMenuName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-info btn-xs" })      
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+
+
+    <div class="col-lg-4" style="border-style:solid">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h2 class="bg" style="background-color:#293955;color:white;text-align:center"> New Permission</h2>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.Label("Role", htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-7">
+                    @Html.DropDownList("CustomRoleId", null, "Select", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CustomRoleId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Menu", htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-7">
+                    @Html.DropDownList("MainMenuId", null, "Select", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.MainMenuId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Sub Menu", htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-7">
+                    <select id="SubMenuId" name="SubMenuId" class="form-control"></select>
+                    <p style="color:red">@ViewBag.existance</p>
+                    @Html.ValidationMessageFor(model => model.SubMenuId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-7">
+                    @Html.DropDownList("Status", new List<SelectListItem>
+            {
+                new SelectListItem{ Text="Active", Value = "1" },
+                new SelectListItem{ Text="Inactive", Value = "0" },
+
+             },"Select", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-7">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/ControllerHelperScript/Permission/Create.js"></script>
+}

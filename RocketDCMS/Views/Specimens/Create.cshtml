@@ -1,0 +1,101 @@
+﻿@model RamsoftBD.ModelView.SpecimenViewModel
+
+@{
+   ViewBag.Title = "Create"; 
+}
+
+<h2 class="bg" style="background-color:#293955;color:white">Specimens</h2>
+
+<div class="row">
+
+
+    <div class="col-lg-8">
+
+        <table id="myTable" class="display">
+            <thead>
+
+
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SpecimenName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SpecimenCode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Remarks)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Specimens)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SpecimenName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SpecimenCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Remarks)
+                    </td>
+                    <td>
+                        <P>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-info btn-xs" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-danger btn-xs" })
+                        </P>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-4">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal" style="border-style:solid">
+                <div>
+                    <h2 class="bg" style="background-color:#293955;color:white;text-align:center"> New Specimen</h2>
+                </div>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SpecimenName, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.SpecimenName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SpecimenName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.Remarks, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-9" style="text-align:right">
+                        <input type="submit" value="Save" class="btn btn-warning" />
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        <script>
+   $(document).ready( function () {
+    $('#myTable').DataTable();
+    } );
+        </script>
+    }

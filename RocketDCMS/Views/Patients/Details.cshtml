@@ -1,0 +1,85 @@
+﻿@model RamsoftBD.Models.Patient
+
+@{
+   ViewBag.Title = "Details"; 
+}
+
+<h2 class="bg" style="background-color:#293955;color:white;text-align:center">Patient Details</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+   
+        <dt class="alert-info" style="font-size:larger">
+            @Html.DisplayName("Name")
+        </dt>
+
+        <dd class="alert-success" style="font-size:larger">
+            @Html.DisplayFor(model => model.PatientName)
+        </dd>
+
+        <dt class="alert-info" style="font-size:larger">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd class="alert-success" style="font-size:larger">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt class="alert-info" style="font-size:larger">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd class="alert-success" style="font-size:larger">
+            @Html.DisplayFor(model => model.Age)
+            @Html.DisplayFor(model => model.AgeType)
+        </dd>
+
+
+        <dt class="alert-info" style="font-size:larger">
+            @Html.DisplayName("Blood Group")
+        </dt>
+
+        <dd class="alert-success" style="font-size:larger">
+            @Html.DisplayFor(model => model.BloodGroup)
+        </dd>
+
+        <dt class="alert-info" style="font-size:larger">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd class="alert-success" style="font-size:larger">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt class="alert-info" style="font-size:larger">
+            @Html.DisplayName("Mobile Number")
+        </dt>
+
+        <dd class="alert-success" style="font-size:larger">
+            @Html.DisplayFor(model => model.MobileNumber)
+        </dd>
+
+        <dt class="alert-info" style="font-size:larger">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd class="alert-success" style="font-size:larger">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt class="alert-info" style="font-size:larger">
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+
+        <dd class="alert-success" style="font-size:larger">
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-info btn-xs" }) 
+    @Html.ActionLink("Back to List", "Create", null, new { @class = "btn btn-primary btn-xs" })
+</p>

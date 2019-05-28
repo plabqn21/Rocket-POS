@@ -182,6 +182,10 @@
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\DoctorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemCatagoriesController.cs" />
+    <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\ItemSubCatagoriesController.cs" />
+    <Compile Include="Controllers\ItemUnitsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
@@ -189,6 +193,7 @@
     <Compile Include="Controllers\ReferelLabsController.cs" />
     <Compile Include="Controllers\ReportControllerDC.cs" />
     <Compile Include="Controllers\SpecimensController.cs" />
+    <Compile Include="Controllers\SuppliersController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Controllers\UnitsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -370,6 +375,10 @@
     <Compile Include="Migrations\201905160501415_AddTestCodeToOrderTable.Designer.cs">
       <DependentUpon>201905160501415_AddTestCodeToOrderTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905280944208_ModifyItemTbl.cs" />
+    <Compile Include="Migrations\201905280944208_ModifyItemTbl.Designer.cs">
+      <DependentUpon>201905280944208_ModifyItemTbl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BillTransaction.cs" />
     <Compile Include="Models\Common\MainMenu.cs" />
@@ -383,6 +392,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\PaymentTransaction.cs" />
+    <Compile Include="Models\POS\Item.cs" />
     <Compile Include="Models\POS\ItemCatagory.cs" />
     <Compile Include="Models\POS\ItemSubCatagory.cs" />
     <Compile Include="Models\POS\ItemUnit.cs" />
@@ -409,6 +419,7 @@
     <Compile Include="ModelView\ManageViewModels.cs" />
     <Compile Include="ModelView\PatientViewModel.cs" />
     <Compile Include="ModelView\PermissionViewModel.cs" />
+    <Compile Include="ModelView\POS\ItemUnitViewModel.cs" />
     <Compile Include="ModelView\ReferelLabViewModel.cs" />
     <Compile Include="ModelView\RegisterViewModel.cs" />
     <Compile Include="ModelView\ReportViewModelDC.cs" />
@@ -574,6 +585,31 @@
     <Content Include="Views\Invoice\DuePaymentSearchResult.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\ReportControllerDS\ParameterEntryDC.cshtml" />
+    <Content Include="Views\Suppliers\Create.cshtml" />
+    <Content Include="Views\Suppliers\Delete.cshtml" />
+    <Content Include="Views\Suppliers\Details.cshtml" />
+    <Content Include="Views\Suppliers\Edit.cshtml" />
+    <Content Include="Views\Suppliers\Index.cshtml" />
+    <Content Include="Views\ItemCatagories\Create.cshtml" />
+    <Content Include="Views\ItemCatagories\Delete.cshtml" />
+    <Content Include="Views\ItemCatagories\Details.cshtml" />
+    <Content Include="Views\ItemCatagories\Edit.cshtml" />
+    <Content Include="Views\ItemCatagories\Index.cshtml" />
+    <Content Include="Views\ItemSubCatagories\Create.cshtml" />
+    <Content Include="Views\ItemSubCatagories\Delete.cshtml" />
+    <Content Include="Views\ItemSubCatagories\Details.cshtml" />
+    <Content Include="Views\ItemSubCatagories\Edit.cshtml" />
+    <Content Include="Views\ItemSubCatagories\Index.cshtml" />
+    <Content Include="Views\Items\Create.cshtml" />
+    <Content Include="Views\Items\Delete.cshtml" />
+    <Content Include="Views\Items\Details.cshtml" />
+    <Content Include="Views\Items\Edit.cshtml" />
+    <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\ItemUnits\Create.cshtml" />
+    <Content Include="Views\ItemUnits\Delete.cshtml" />
+    <Content Include="Views\ItemUnits\Details.cshtml" />
+    <Content Include="Views\ItemUnits\Edit.cshtml" />
+    <Content Include="Views\ItemUnits\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -715,6 +751,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905160501415_AddTestCodeToOrderTable.resx">
       <DependentUpon>201905160501415_AddTestCodeToOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905280944208_ModifyItemTbl.resx">
+      <DependentUpon>201905280944208_ModifyItemTbl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Invoice\Invoice.rdlc" />
   </ItemGroup>

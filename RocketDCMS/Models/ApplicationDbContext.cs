@@ -71,6 +71,14 @@ namespace RamsoftBD.Models
 
         }
 
-      
+        public System.Data.Entity.DbSet<RamsoftBD.Models.POS.ItemUnit> ItemUnits { get; set; }
+
+        public System.Data.Entity.DbSet<RamsoftBD.Models.POS.Supplier> Suppliers { get; set; }
+
+        public System.Data.Entity.DbSet<RamsoftBD.Models.POS.ItemCatagory> ItemCatagories { get; set; }
+
+        public System.Data.Entity.DbSet<RamsoftBD.Models.POS.ItemSubCatagory> ItemSubCatagories { get; set; }
+
+        public System.Data.Entity.DbSet<RamsoftBD.Models.POS.Item> Items { get; set; }
     }
 }

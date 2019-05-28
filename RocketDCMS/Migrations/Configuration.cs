@@ -27,37 +27,42 @@ namespace RamsoftBD.Migrations
 
 
             context.MainMenus.AddOrUpdate(x => x.Id,
-
-            new MainMenu() { Id = "Branch", MainMenuName = "Branch" },
-            new MainMenu() { Id = "Doctor", MainMenuName = "Doctor" },
-            new MainMenu() { Id = "ReferelLab", MainMenuName = "Referel Lab" },
-            new MainMenu() { Id = "Department", MainMenuName = "Department" },
-            new MainMenu() { Id = "Patients", MainMenuName = "Patients" },
-            new MainMenu() { Id = "Specimens", MainMenuName = "Specimens" },
-            new MainMenu() { Id = "Unit", MainMenuName = "Unit" },
-            new MainMenu() { Id = "Test", MainMenuName = "Test" },
-            new MainMenu() { Id = "Invoice", MainMenuName = "Invoice" },
             new MainMenu() { Id = "Role", MainMenuName = "Role" },
             new MainMenu() { Id = "Permission", MainMenuName = "Permission" },
-             new MainMenu() { Id = "Report", MainMenuName = "Report" }
+            new MainMenu() { Id = "Report", MainMenuName = "Report" },
+            new MainMenu() { Id = "Branch", MainMenuName = "Branch" }
+
+
+            //new MainMenu() { Id = "Doctor", MainMenuName = "Doctor" },
+            //new MainMenu() { Id = "ReferelLab", MainMenuName = "Referel Lab" },
+            //new MainMenu() { Id = "Department", MainMenuName = "Department" },
+            //new MainMenu() { Id = "Patients", MainMenuName = "Patients" },
+            //new MainMenu() { Id = "Specimens", MainMenuName = "Specimens" },
+            //new MainMenu() { Id = "Unit", MainMenuName = "Unit" },
+            //new MainMenu() { Id = "Test", MainMenuName = "Test" },
+            //new MainMenu() { Id = "Invoice", MainMenuName = "Invoice" }
+          
           );
 
 
             context.SubMenus.AddOrUpdate(x => x.SubMenuName,
                       new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Permission", Controller = "Permissions", Action = "Create", MainMenuId = "Permission" },
                       new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Branch", Controller = "Branches", Action = "Create", MainMenuId = "Branch" },
-                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Doctor", Controller = "Doctors", Action = "Create", MainMenuId = "Doctor" },
-                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Department", Controller = "Departments", Action = "Create", MainMenuId = "Department" },
-                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Invoice", Controller = "Invoice", Action = "Create", MainMenuId = "Invoice" },
-                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Update Invoice", Controller = "Invoice", Action = "InvoiceSearch", MainMenuId = "Invoice" },
-                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Patient", Controller = "Patients", Action = "Create", MainMenuId = "Patients" },
-                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New ReferelLab", Controller = "ReferelLabs", Action = "Create", MainMenuId = "ReferelLab" },
-                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Specimen", Controller = "Specimens", Action = "Create", MainMenuId = "Specimens" },
-                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Test", Controller = "Tests", Action = "Create", MainMenuId = "Test" },
-                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Unit", Controller = "Units", Action = "Create", MainMenuId = "Unit" },
                       new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Role", Controller = "CustomRoles", Action = "Create", MainMenuId = "Role" },
-                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Due Payment", Controller = "Invoice", Action = "DuePayment", MainMenuId = "Invoice" },
-                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "View Report(DC)", Controller = "ReportControllerDC", Action = "ParameterEntryDC", MainMenuId = "Report" }
+                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "View Report", Controller = "ReportController", Action = "ParameterEntry", MainMenuId = "Report" }
+
+                      //new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Doctor", Controller = "Doctors", Action = "Create", MainMenuId = "Doctor" },
+                      //new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Department", Controller = "Departments", Action = "Create", MainMenuId = "Department" },
+                      //new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Invoice", Controller = "Invoice", Action = "Create", MainMenuId = "Invoice" },
+                      //new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Update Invoice", Controller = "Invoice", Action = "InvoiceSearch", MainMenuId = "Invoice" },
+                      //new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Patient", Controller = "Patients", Action = "Create", MainMenuId = "Patients" },
+                      //new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New ReferelLab", Controller = "ReferelLabs", Action = "Create", MainMenuId = "ReferelLab" },
+                      //new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Specimen", Controller = "Specimens", Action = "Create", MainMenuId = "Specimens" },
+                      //new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Test", Controller = "Tests", Action = "Create", MainMenuId = "Test" },
+                      //new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Unit", Controller = "Units", Action = "Create", MainMenuId = "Unit" },
+                     
+                      //new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Due Payment", Controller = "Invoice", Action = "DuePayment", MainMenuId = "Invoice" },
+                      
                      );
 
 

@@ -7,7 +7,7 @@ using System.Web;
 
 namespace RamsoftBD.Models.POS
 {
-    public class ItemSubCatagory
+    public class Item
     {
         [Key]
         public Guid Id { get; set; }
@@ -25,10 +25,27 @@ namespace RamsoftBD.Models.POS
         public Guid? ItemCatagoryId { get; set; }
         public ItemCatagory ItemCatagory { get; set; }
 
+        [ForeignKey("ItemSubCatagory")]
+        public Guid? ItemSubCatagoryId { get; set; }
+        public ItemSubCatagory ItemSubCatagory { get; set; }
+
+        [ForeignKey("ItemUnit")]
+        [Display(Name = "ItemUnit")]
+        public Guid? ItemUnitId { get; set; }
+        public ItemUnit ItemUnit { get; set; }
+
+        [ForeignKey("Supplier")]
+        public Guid? SupplierId { get; set; }
+        public Supplier Supplier { get; set; }
+
+        [Required]
+        public decimal Price { get; set; }
+        [Display(Name = "Discount(%)")]
+        public decimal? Discount { get; set; }
+
         [ForeignKey("Branch")]
         public Guid? BranchId { get; set; }
         public RamsoftBD.Models.Branch Branch { get; set; }
-      
 
     }
 }

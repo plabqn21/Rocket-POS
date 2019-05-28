@@ -17,7 +17,6 @@ namespace RamsoftBD.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-     
 
         // GET: ItemUnits/Create
         public ActionResult Create()

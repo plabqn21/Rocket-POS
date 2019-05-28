@@ -33,12 +33,22 @@ namespace RamsoftBD.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(ItemUnit itemUnit)
         {
-            if (ModelState.IsValid)
+            var item = db.ItemUnits.Where(x => x.Name == itemUnit.Name);
+
+            if (item.Count() == 0)
             {
-                itemUnit.Id = Guid.NewGuid();
-                db.ItemUnits.Add(itemUnit);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Create");
+                if (ModelState.IsValid)
+                {
+                    itemUnit.Id = Guid.NewGuid();
+                    db.ItemUnits.Add(itemUnit);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Create");
+                }
+            }
+
+            else {
+
+                ViewBag.Duplicate = "Already Exist";
             }
             ItemUnitViewModel ItemUnitViewModel = new ItemUnitViewModel();
             ItemUnitViewModel.ItemUnits = db.ItemUnits.ToList();
@@ -75,12 +85,25 @@ namespace RamsoftBD.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(ItemUnit itemUnit)
         {
-            if (ModelState.IsValid)
+            var item = db.ItemUnits.Where(x => x.Name == itemUnit.Name &&x.Id!= itemUnit.Id);
+
+            if (item.Count() == 0)
             {
-                db.Entry(itemUnit).State = EntityState.Modified;
-                await db.SaveChangesAsync();
-                return RedirectToAction("Create");
+
+                if (ModelState.IsValid)
+                {
+                    db.Entry(itemUnit).State = EntityState.Modified;
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Create");
+                }
             }
+
+            else
+            {
+
+                ViewBag.Duplicate = "Already Exist";
+            }
+
 
             ItemUnitViewModel ItemUnitViewModel = new ItemUnitViewModel();
             ItemUnitViewModel.ItemUnits = db.ItemUnits.ToList();

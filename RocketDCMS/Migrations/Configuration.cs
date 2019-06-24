@@ -31,7 +31,10 @@ namespace RamsoftBD.Migrations
             new MainMenu() { Id = "Permission", MainMenuName = "Permission" },
             new MainMenu() { Id = "Report", MainMenuName = "Report" },
             new MainMenu() { Id = "Branch", MainMenuName = "Branch" },
-             new MainMenu() { Id = "ItemUnit", MainMenuName = "Item Unit" }
+            new MainMenu() { Id = "ItemUnit", MainMenuName = "Unit" },
+            new MainMenu() { Id = "ItemSubCatagory", MainMenuName = "Sub Catagory" },
+            new MainMenu() { Id = "ItemCatagory", MainMenuName = "Catagory" },
+             new MainMenu() { Id = "Item", MainMenuName = "Item" }
 
 
           //new MainMenu() { Id = "Doctor", MainMenuName = "Doctor" },
@@ -55,7 +58,10 @@ namespace RamsoftBD.Migrations
 
 
 
-                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Unit", Controller = "ItemUnits", Action = "Create", MainMenuId = "ItemUnit" }
+                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Unit", Controller = "ItemUnits", Action = "Create", MainMenuId = "ItemUnit" },
+                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Catagory", Controller = "ItemCatagories", Action = "Create", MainMenuId = "ItemCatagory" },
+                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Sub Catagory", Controller = "ItemSubCatagories", Action = "Create", MainMenuId = "ItemSubCatagory" },
+                      new SubMenu() { Id = Guid.NewGuid(), SubMenuName = "Add New Item", Controller = "Items", Action = "Create", MainMenuId = "Item" }
 
 
 
